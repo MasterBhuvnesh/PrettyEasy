@@ -8,7 +8,7 @@ const TabLayout = () => {
     tabBarInactiveTintColor:Colors.dark.text,
     tabBarStyle:{
       backgroundColor:Colors.SECONDARY,
-   paddingBottom:14,
+   paddingBottom:50,
       height:75,
      
     },

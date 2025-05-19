@@ -44,6 +44,12 @@
         "projectId": "36bc2299-6364-47ef-b8c9-848e373f6523"
       }
     },
-    "owner": "devyanik"
+    "owner": "devyanik",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/36bc2299-6364-47ef-b8c9-848e373f6523"
+    }
   }
 }
