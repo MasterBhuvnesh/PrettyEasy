@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "PrettyEasy",
-    "slug": "PrettyEasy",
+    "slug": "prettyeasy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -37,6 +37,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "36bc2299-6364-47ef-b8c9-848e373f6523"
+      }
+    },
+    "owner": "devyanik"
   }
 }
