@@ -1,19 +1,24 @@
-import { Text, Touchable, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, Touchable, TouchableOpacity, View } from "react-native";
 import { useRouter } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import {Image} from "react-native";
+import logo from "../assets/images/react-logo.png";
 export default function Index() {
   const router = useRouter();
   return (
-    <View
-    // className="bg-red-500"
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit eeeapp/index.tsx to edit this screen.</Text>
-    <TouchableOpacity onPress={() => router.push("/home")} className="bg-blue-500 p-4 rounded">
-      <Text>change route</Text></TouchableOpacity>
-    </View>
+    <SafeAreaView className={`bg-[#f3d3d9]`}>
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View>
+          <Image
+            source={logo}
+            style={{
+              width: 400,
+              height: 200,
+              marginTop: 50,
+              paddingLeft: 20,
+            }}/>
+        </View>
+      </ScrollView>  
+    </SafeAreaView>
   );
 }
