@@ -2,9 +2,9 @@ import * as Yup from 'yup';
 
 const validationSchema = Yup.object().shape({
     name: Yup.string()
-        .required('First name is required')
-        .min(2, 'First name must be at least 2 characters long')
-        .max(50, 'First name must not exceed 50 characters'),
+        .required('Name is required')
+        .min(2, 'Name must be at least 2 characters long')
+        .max(50, 'Name must not exceed 50 characters'),
         
     email: Yup.string()
         .email('Invalid email address')
