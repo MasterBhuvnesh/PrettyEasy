@@ -14,9 +14,9 @@ export default function Index() {
           <Image
             source={logo}
             style={{
-              width: 350,
-              height: 150,
-              marginTop: 50,
+              width: 320,
+              height: 120,
+              marginTop: 70,
             }}
           />
           <View className="w-3/4">
@@ -29,7 +29,7 @@ export default function Index() {
 
             <TouchableOpacity
               onPress={() => router.push("/home")}
-              className="border-2 border-[#ff4380] p-2 rounded-lg"
+              className="border-2 border-[#ff4380] p-2 mt-2 rounded-lg"
             >
               <Text className="text-xl font-semibold text-center text-[#ff4380]">Guest User</Text>
             </TouchableOpacity>
@@ -49,7 +49,7 @@ export default function Index() {
             </TouchableOpacity>
           </View>
         </View>
-        <View className="absolute bottom-0 left-0 right-0 h-40">
+        <View className="absolute bottom-0 left-0 right-0 h-60">
           <Image source={hand} className="w-full h-full" resizeMode="cover" />
         </View>
         <StatusBar barStyle={"light-content"} backgroundColor={"#f3d3d9"} />

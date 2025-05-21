@@ -12,7 +12,7 @@ const TabLayout = () => {
     tabBarStyle:{
       backgroundColor:Colors.SECONDARY,
       paddingBottom:15,
-      height:75,
+      height:60,
     },
     tabBarLabelStyle:{
       fontSize:12,
