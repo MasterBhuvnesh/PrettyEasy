@@ -94,7 +94,7 @@ const Signup = () => {
                                         onPress={handleSubmit}
                                         className="bg-[#ff4380] border-2 border-[#ff4380] p-2 my-4 rounded-lg"
                                     >
-                                        <Text className="text-lg font-semibold text-center text-white">Sign Up</Text>
+                                        <Text className="text-lg font-semibold text-center text-white">Sign In</Text>
                                     </TouchableOpacity>
 
                                    
