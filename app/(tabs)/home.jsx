@@ -1,4 +1,4 @@
-import { View, Text ,Image,ImageBackground,ScrollView, TouchableOpacity,ActivityIndicator, FlatList} from 'react-native'
+import { View, Text ,Image,ImageBackground,Platform,ScrollView, TouchableOpacity,ActivityIndicator, FlatList} from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import logo from '../../assets/images/logo.png' 
@@ -17,11 +17,18 @@ const home = () => {
       />
       <Text className="text-lg text-[#ff4380] font-bold mb-2">{item.name}</Text>
        <Text className=" text-base mb-2">{item.address}</Text>
-        <Text className="text-base mb-2">Open: {item.opening} ~ Close: {item.closing}</Text>
+      <Text className="text-base mb-2">
+  Open: <Text className="text-[#ff4380]">{item.opening}</Text> ~ Close: <Text className="text-[#ff4380]">{item.closing}</Text>
+</Text>
+
+
       </TouchableOpacity>
   );
   return (
-    <SafeAreaView style ={{ backgroundColor:"#f3d3d9"}}>
+    <SafeAreaView style ={[{ backgroundColor:"#f3d3d9"},
+    Platform.OS=="android" && {paddingBottom: 55},
+    Platform.OS=="ios" && {paddingBottom: 20},
+    ]} >
       <View className="flex items-center">
         <View className="bg-[#ffffffaf] w-11/12 rounded-lg shadow-lg justify-between items-center ">
           <View className="flex flex-row">
@@ -47,6 +54,21 @@ const home = () => {
               
             </BlurView>
           </ImageBackground>
+          <View className="p-4 bg-[#f3d3d9] flex-row items-center">
+            <Text className="text-3xl font-semibold text-[#29235C]">
+              Special Discount %
+              </Text>
+              </View>
+          {
+        salons.length>0?
+        <FlatList data={salons} renderItem={renderItem} horizontal contentContainerStyle={{padding:16}} showsHorizontalScrollIndicator={false} scrollEnabled={true}  />
+        :<ActivityIndicator animating color={"#ff4380"} />
+       }
+       <View className="p-4 bg-[#f3d3d9] flex-row items-center">
+            <Text className="text-3xl font-semibold text-[#ff4380]">
+              Our Salons
+              </Text>
+              </View>
           {
         salons.length>0?
         <FlatList data={salons} renderItem={renderItem} horizontal contentContainerStyle={{padding:16}} showsHorizontalScrollIndicator={false} scrollEnabled={true}  />

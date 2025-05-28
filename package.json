@@ -30,6 +30,7 @@
     "expo-system-ui": "~5.0.7",
     "expo-updates": "~0.28.13",
     "expo-web-browser": "~14.1.6",
+    "firebase": "^11.8.1",
     "formic": "^0.0.10",
     "formik": "^2.4.6",
     "nativewind": "^4.1.23",
