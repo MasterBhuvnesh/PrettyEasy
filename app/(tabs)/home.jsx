@@ -8,13 +8,17 @@ import { useState, useEffect } from 'react';
 import { collection,getDocs,query } from 'firebase/firestore'
 // import {salons} from '../../store/salons' // Assuming this is the correct path to your salons data
 import { db } from '../../config/firebaseConfig'; // Import your Firebase configuration
+import { useRouter } from "expo-router";
 
 const Home = () => {
+const router = useRouter();
 
 const[salons, setSalons] = useState([]); // Using the salons data from the store
   
   const renderItem = ({ item }) => (
-    <TouchableOpacity className="bg-[#ffffffaf] max-h-64 max-w-xs flex justify-center rounded-lg p-4 mx-4 shadow-md">
+    <TouchableOpacity 
+    onPress={()=>router.push(`/salon/${item.name}`)}
+    className="bg-[#ffffffaf] max-h-64 max-w-xs flex justify-center rounded-lg p-4 mx-4 shadow-md">
       <Image resizeMode='cover' 
       source={{uri:item.image}}
       className=" h-28 rounded-lg mb-1 mt-2"
