@@ -56,12 +56,12 @@ const Salon = () => {
         <View style={{ position: "absolute", top: "50%", opacity: 0.7, backgroundColor: "black", borderRadius: 50, padding: 5, zIndex: 10, right: "6%" }}>
           <Ionicons
             onPress={handleNextImage}
-            name="arrow-forward" size={24} color="#f3d3d9" />
+            name="arrow-forward" size={24} color="white" />
         </View>{""}
         <View style={{ position: "absolute", top: "50%", opacity: 0.7, backgroundColor: "black", borderRadius: 50, padding: 5, zIndex: 10, left: "2%" }}>
           <Ionicons
             onPress={handlePrevImage}
-            name="arrow-back" size={24} color="#f3d3d9" />
+            name="arrow-back" size={24} color="white" />
         </View>
 
         <View style={{ position: "absolute", display: "flew", justify: "center", alignItems: "center", flexDirection: "row", left: "50%", transform: [{ translateX: -20 }], zIndex: 10, bottom: 15 }}>
@@ -76,7 +76,7 @@ const Salon = () => {
 
         <Image
           source={{ uri: item }} style={{
-            opacity: 0.4, backgroundColor: "black", marginRight: 20, marginLeft: 5
+            opacity: 0.5, backgroundColor: "black", marginRight: 20, marginLeft: 5
             , borderRadius: 25
           }}
           className="h-64 mt-5"
@@ -199,9 +199,9 @@ const Salon = () => {
             </Text>
           </View>
 
-          <View className="flex-1 flex-row p-2 ">
+          <View style={{ marginStart:'4'}} className="flex-1 flex-row p-2 ">
             <Ionicons
-              name="time" size={20} color="#d39da7" />
+              name="time" size={20} color="#d39da7"  />
             <Text className="max-w-[75%] mx-2 font-semibold text-white" >
               {salonData?.opening} - {salonData?.closing}
 
