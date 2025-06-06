@@ -1,14 +1,18 @@
 import { View, Text ,Image,ImageBackground,Platform,ScrollView, TouchableOpacity,ActivityIndicator, FlatList} from 'react-native'
-import React from 'react'
+import React, { use } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import logo from '../../assets/images/logo.png' 
 import banner from '../../assets/images/banner.png'
 import { BlurView } from 'expo-blur'
-import salons from '../../store/salons' // Assuming this is the correct path to your salons data
+import { useState, useEffect } from 'react';
+import { collection,getDocs,query } from 'firebase/firestore'
+// import {salons} from '../../store/salons' // Assuming this is the correct path to your salons data
+import { db } from '../../config/firebaseConfig'; // Import your Firebase configuration
 
+const Home = () => {
 
-const home = () => {
- 
+const[salons, setSalons] = useState([]); // Using the salons data from the store
+  
   const renderItem = ({ item }) => (
     <TouchableOpacity className="bg-[#ffffffaf] max-h-64 max-w-xs flex justify-center rounded-lg p-4 mx-4 shadow-md">
       <Image resizeMode='cover' 
@@ -24,6 +28,19 @@ const home = () => {
 
       </TouchableOpacity>
   );
+
+const getSalons = async () => {
+  const q = query(collection(db, "salons"));
+  const res = await getDocs(q);
+res.forEach((item)=>{
+  setSalons((prev) => [...prev, item.data()]);
+});
+};
+
+useEffect(()=>{
+  getSalons();
+},[]);
+
   return (
     <SafeAreaView style ={[{ backgroundColor:"#f3d3d9"},
     Platform.OS=="android" && {paddingBottom: 55},
@@ -81,4 +98,4 @@ const home = () => {
     )
 }
 
-export default home;
+export default Home;

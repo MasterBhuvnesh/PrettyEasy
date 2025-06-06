@@ -121,4 +121,190 @@ const salons = [
   },
 ];
 
-export default salons;
+const carouselImages = [
+  {
+    images: [
+      "https://images.pexels.com/photos/3993448/pexels-photo-3993448.jpeg",
+      "https://images.pexels.com/photos/1028422/pexels-photo-1028422.jpeg",
+      "https://images.pexels.com/photos/209957/pexels-photo-209957.jpeg"
+    ],
+    sal_id: "/salons/salon_1",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3992875/pexels-photo-3992875.jpeg",
+      "https://images.pexels.com/photos/374845/pexels-photo-374845.jpeg",
+      "https://images.pexels.com/photos/1587049/pexels-photo-1587049.jpeg"
+    ],
+    sal_id: "/salons/salon_2",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg",
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+      "https://images.pexels.com/photos/545217/pexels-photo-545217.jpeg"
+    ],
+    sal_id: "/salons/salon_3",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg",
+      "https://images.pexels.com/photos/356046/pexels-photo-356046.jpeg",
+      "https://images.pexels.com/photos/312574/pexels-photo-312574.jpeg"
+    ],
+    sal_id: "/salons/salon_4",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3065174/pexels-photo-3065174.jpeg",
+      "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg",
+      "https://images.pexels.com/photos/372275/pexels-photo-372275.jpeg"
+    ],
+    sal_id: "/salons/salon_5",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg",
+      "https://images.pexels.com/photos/2736139/pexels-photo-2736139.jpeg",
+      "https://images.pexels.com/photos/2905449/pexels-photo-2905449.jpeg"
+    ],
+    sal_id: "/salons/salon_6",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg",
+      "https://images.pexels.com/photos/4553357/pexels-photo-4553357.jpeg",
+      "https://images.pexels.com/photos/3944389/pexels-photo-3944389.jpeg"
+    ],
+    sal_id: "/salons/salon_7",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3065174/pexels-photo-3065174.jpeg",
+      "https://images.pexels.com/photos/3884981/pexels-photo-3884981.jpeg",
+      "https://images.pexels.com/photos/3984866/pexels-photo-3984866.jpeg"
+    ],
+    sal_id: "/salons/salon_8",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3992875/pexels-photo-3992875.jpeg",
+      "https://images.pexels.com/photos/313369/pexels-photo-313369.jpeg",
+      "https://images.pexels.com/photos/2377184/pexels-photo-2377184.jpeg"
+    ],
+    sal_id: "/salons/salon_9",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3993448/pexels-photo-3993448.jpeg",
+      "https://images.pexels.com/photos/1704127/pexels-photo-1704127.jpeg",
+      "https://images.pexels.com/photos/270345/pexels-photo-270345.jpeg"
+    ],
+    sal_id: "/salons/salon_10",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg",
+      "https://images.pexels.com/photos/3913302/pexels-photo-3913302.jpeg",
+      "https://images.pexels.com/photos/271255/pexels-photo-271255.jpeg"
+    ],
+    sal_id: "/salons/salon_11",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg",
+      "https://images.pexels.com/photos/3015995/pexels-photo-3015995.jpeg",
+      "https://images.pexels.com/photos/1987135/pexels-photo-1987135.jpeg"
+    ],
+    sal_id: "/salons/salon_12",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3993448/pexels-photo-3993448.jpeg",
+      "https://images.pexels.com/photos/3767398/pexels-photo-3767398.jpeg",
+      "https://images.pexels.com/photos/3564551/pexels-photo-3564551.jpeg"
+    ],
+    sal_id: "/salons/salon_13",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/3065174/pexels-photo-3065174.jpeg",
+      "https://images.pexels.com/photos/1716975/pexels-photo-1716975.jpeg",
+      "https://images.pexels.com/photos/2330034/pexels-photo-2330034.jpeg"
+    ],
+    sal_id: "/salons/salon_14",
+  },
+  {
+    images: [
+      "https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg",
+      "https://images.pexels.com/photos/1173777/pexels-photo-1173777.jpeg",
+      "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg"
+    ],
+    sal_id: "/salons/salon_15",
+  },
+];
+const slots = [
+  {
+    ref_id: "/salons/salon_1",
+    slot: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"],
+  },
+  {
+    ref_id: "/salons/salon_2",
+    slot: ["09:30", "11:30", "13:30", "15:30", "17:30"],
+  },
+  {
+    ref_id: "/salons/salon_3",
+    slot: ["08:30", "10:30", "12:30", "14:30", "16:30", "18:30"],
+  },
+  {
+    ref_id: "/salons/salon_4",
+    slot: ["09:00", "11:00", "13:00", "15:00", "17:00"],
+  },
+  {
+    ref_id: "/salons/salon_5",
+    slot: ["10:00", "12:00", "14:00", "16:00"],
+  },
+  {
+    ref_id: "/salons/salon_6",
+    slot: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00"],
+  },
+  {
+    ref_id: "/salons/salon_7",
+    slot: ["09:00", "11:00", "13:00", "15:00", "17:00"],
+  },
+  {
+    ref_id: "/salons/salon_8",
+    slot: ["09:30", "11:30", "13:30", "15:30", "17:30"],
+  },
+  {
+    ref_id: "/salons/salon_9",
+    slot: ["10:00", "12:00", "14:00", "16:00", "18:00"],
+  },
+  {
+    ref_id: "/salons/salon_10",
+    slot: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00"],
+  },
+  {
+    ref_id: "/salons/salon_11",
+    slot: ["10:00", "12:00", "14:00", "16:00"],
+  },
+  {
+    ref_id: "/salons/salon_12",
+    slot: ["09:00", "11:00", "13:00", "15:00", "17:00"],
+  },
+  {
+    ref_id: "/salons/salon_13",
+    slot: ["09:30", "11:30", "13:30", "15:30", "17:30"],
+  },
+  {
+    ref_id: "/salons/salon_14",
+    slot: ["08:30", "10:30", "12:30", "14:30", "16:30"],
+  },
+  {
+    ref_id: "/salons/salon_15",
+    slot: ["09:00", "11:00", "13:00", "15:00", "17:00"],
+  },
+];
+
+export { carouselImages, salons, slots };
+
