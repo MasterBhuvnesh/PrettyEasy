@@ -17,7 +17,7 @@ const DatePickerComponent = ({date, setDate}) => {
         setShow(true)
     }
     return (
-        <View className="flex p-2 flex-row">
+        <View className="flex flex-row">
             <TouchableOpacity onPress={handlePress}
             className={` rounded-lg text-white text-base
                 ${ Platform.OS ==="android" && "mx-5 px-2 py-1 justify-center bg-[#383650]"

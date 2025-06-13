@@ -7,6 +7,8 @@ import { db } from '../../config/firebaseConfig'; // Import your Firebase config
 import { Ionicons } from '@expo/vector-icons';
 import { Linking } from 'react-native';
 import DatePickerComponent from '../../components/salon/DatePickerComponent';
+import GuestPickerComponent from '../../components/salon/GuestPickerComponent';
+import FindSlots from '../../components/salon/FindSlots';
 
 
 
@@ -19,6 +21,8 @@ const Salon = () => {
   const [carouselData, setCarouselData] = useState({});
   const [slotsData, setSlotsData] = useState({});
   const [date, setDate] = useState(new Date());
+const [selectedNumber,setSelectedNumber]=useState(1);
+const[selectedSlot, setSelectedSlot] = useState(null);
 
   const handleNextImage = () => {
     const carouselLength = carouselData[0]?.images?.length || 0;
@@ -137,7 +141,7 @@ const Salon = () => {
         slotsSnapshot.forEach((slotDoc) => {
           slots.push(slotDoc.data());
         });
-        setSlotsData(slots);
+        setSlotsData(slots[0]?.slot);
       };
 
 
@@ -151,9 +155,7 @@ const Salon = () => {
   useEffect(() => {
     getSalonData();
   }, []);
-  console.log("Salon Data:", salonData);
-  console.log("Carousel Data:", carouselData);
-  console.log("Slots Data:", slotsData);
+  
 
   return (
     <>
@@ -173,7 +175,7 @@ const Salon = () => {
             <View className="border-b-2 border-[#efb6c0]" />
 
           </View>
-          <View className="h-64 max-w-[98%] mx-2 rounded-[25px]">
+          <View className="h-72 max-w-[98%] mx-2 rounded-[25px]">
             <FlatList
               ref={flatListRef}
               data={Array.isArray(carouselData[0]?.images) ? carouselData[0]?.images : []}
@@ -199,23 +201,37 @@ const Salon = () => {
             </Text>
           </View>
 
-          <View style={{ marginStart:'4'}} className="flex-1 flex-row p-2 ">
+          <View style={{ marginStart: '4' }} className="flex-1 flex-row p-2 ">
             <Ionicons
-              name="time" size={20} color="#d39da7"  />
+              name="time" size={20} color="#d39da7" />
             <Text className="max-w-[75%] mx-2 font-semibold text-white" >
               {salonData?.opening} - {salonData?.closing}
 
             </Text>
           </View>
-          <View className="flex-1 flex-row m-2 p-2 justify-end items-center">
-            <View className="flex-1 flex-row">
-              <Ionicons name="calendar" size={20} color="#d39da7" />
-              <Text className="text-white mx-2 text-base">Select booking Date</Text>
+          <View className="flex-1 border m-2 p-2 border-[#d39da7] rounded-lg">
+            <View className="flex-1 flex-row m-2 p-2 justify-end items-center">
+              <View className="flex-1 flex-row">
+                <Ionicons name="calendar" size={20} color="#d39da7" />
+                <Text className="text-white mx-2 text-base">Select booking Date</Text>
+              </View>
+              <DatePickerComponent date={date} setDate={setDate} />
             </View>
-            <DatePickerComponent date={date} setDate={setDate} />
+            <View className="flex-1 flex-row bg-[##383650] rounded-lg m-2 p-2 justify-end items-center">
+              <View className="flex-1 flex-row">
+                <Ionicons name="people" size={20} color="#d39da7" />
+                <Text className="text-white mx-2 text-base">Select number of clients</Text>
+              </View>
+              <GuestPickerComponent selectedNumber={selectedNumber} setSelectedNumber={setSelectedNumber} />
+            </View>
+
           </View>
-
-
+          <View className="flex-1">
+            <FindSlots 
+            date={date} 
+            selectedNumber={selectedNumber}
+            slots={slotsData} selectedSlot={selectedSlot} setSelectedSlot={setSelectedSlot}/>
+          </View>
         </ScrollView>
       </SafeAreaView>
     </>
