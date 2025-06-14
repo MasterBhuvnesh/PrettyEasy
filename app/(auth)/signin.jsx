@@ -16,7 +16,7 @@ import logo from "../../assets/images/logo.png";
 // Fix the import path to match your actual file structure
 import { auth } from "@/config/firebaseConfig"; // Import your Firebase auth
 import { signInWithEmailAndPassword } from "firebase/auth";
-import validationSchema from "../../utils/signupSchema.jsx";
+import validationSchema from "../../utils/signinSchema.jsx";
 
 const SignIn = () => {
   const { width, height } = useWindowDimensions();
@@ -27,6 +27,7 @@ const SignIn = () => {
   const bottomImageHeight = height * 0.3;
 
   const handleSignin = async (values) => {
+    console.log("SignIn values:", JSON.stringify(values, null, 2));
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
