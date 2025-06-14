@@ -124,7 +124,7 @@ const router = useRouter();
             </ScrollView>
 
             {/* Bottom Image - Positioned absolutely */}
-            <View className="absolute bottom-0 left-0 right-0" style={{ height: bottomImageHeight }}>
+            <View className=" bottom-0 left-0 right-0" style={{ height: bottomImageHeight }} stickyHeaderIndices ={[0]}>
                 <Image
                     source={hand}
                     className="w-full h-full"
