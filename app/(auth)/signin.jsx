@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import { Image, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View, useWindowDimensions } from 'react-native';
+import { Image, ScrollView, StatusBar, Text, TextInput,ImageBackground, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import hand from '../../assets/images/hand1.png';
 import logo from '../../assets/images/logo.png';
@@ -130,7 +130,7 @@ const Signup = () => {
             </ScrollView>
 
             {/* Bottom Image - Positioned absolutely */}
-            <View className="absolute bottom-0 left-0 right-0" style={{ height: bottomImageHeight }}>
+            <View className="bottom-0 left-0 right-0" style={{ height: bottomImageHeight }}>
                 <Image
                     source={hand}
                     className="w-full h-full"
